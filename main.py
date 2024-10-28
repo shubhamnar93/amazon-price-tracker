@@ -8,7 +8,7 @@ chrome_driver=r"C:\developer\chromedriver.exe"
 driver=webdriver.Chrome(service=Service(chrome_driver))
 driver.get('https://www.amazon.in/BassHeads-225-Super-Extra-Headphones/dp/B01M9C51T9/ref=sr_1_4?sr=8-4')
 
-price= int(driver.find_element(By.XPATH, '//*[@id="corePriceDisplay_desktop_feature_div"]/div[1]/span[3]/span[2]/span[2]').text)
+price= int(driver.find_element(By.XPATH, '//*[@id="corePriceDisplay_desktop_feature_div"]/div[1]/span[3]/span[2]/span[2]').text.replace(',', ''))
 
 driver.quit()
 username= os.getenv('username')
